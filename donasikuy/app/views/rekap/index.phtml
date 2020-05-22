@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Donasi</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="/index">DonasiKuy!</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item">
+			<a class="nav-link" href="/donasi">Donasi</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/rekap">Rekap</a>
+		  </li>
+		</ul>
+	  </div>
+    </nav>
+    <?php
+
+echo "<h1>Rekap</h1>";
+
+echo "<h2>Uang</h2>";
+
+if ($users->count() > 0) {
+  ?>
+  <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+      <tr>
+          <th>#</th>
+          <th>Nama</th>
+          <th>Uang(Rp)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <?php foreach ($users as $user) { ?>
+          <tr>
+              <td><?php echo $user->id; ?></td>
+              <td><?php echo $user->nama; ?></td>
+              <td><?php echo $user->uang; ?></td>
+          </tr>
+      <?php } ?>
+      </tbody>
+  </table>
+  <?php
+}
+
+echo "<h2>Masker</h2>";
+if ($users->count() > 0) {
+  ?>
+  <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+      <tr>
+          <th>#</th>
+          <th>Nama</th>
+          <th>Masker</th>
+      </tr>
+      </thead>
+      <tbody>
+      <?php foreach ($users as $user) { ?>
+          <tr>
+              <td><?php echo $user->id; ?></td>
+              <td><?php echo $user->nama; ?></td>
+              <td><?php echo $user->masker; ?></td>
+          </tr>
+      <?php } ?>
+      </tbody>
+  </table>
+  <?php
+}
+
+echo "<h2>Sembako</h2>";
+if ($users->count() > 0) {
+  ?>
+  <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+      <tr>
+          <th>#</th>
+          <th>Nama</th>
+          <th>Sembako</th>
+      </tr>
+      </thead>
+      <tbody>
+      <?php foreach ($users as $user) { ?>
+          <tr>
+              <td><?php echo $user->id; ?></td>
+              <td><?php echo $user->nama; ?></td>
+              <td><?php echo $user->sembako; ?></td>
+          </tr>
+      <?php } ?>
+      </tbody>
+  </table>
+  <?php
+}
